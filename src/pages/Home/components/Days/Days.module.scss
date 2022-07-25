@@ -1,0 +1,92 @@
+@import './../../../../styles/variables.scss';
+
+.days {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding: 20px;
+	width: 100%;
+	background: $lite_back;
+
+	box-shadow: $box_shadow;
+	border-radius: 0 0 $b_radius $b_radius;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	background: $blue_back;
+	border-radius: 10px;
+	padding: 10px;
+	width: 149px;
+	transition: 0.3s;
+	cursor: pointer;
+
+	.day_name {
+		margin-bottom: 7px;
+		font-size: 18px;
+	}
+	.day_info {
+		font-size: 14px;
+		margin-bottom: 12px;
+		color: $base_col;
+	}
+	.img {
+		margin-bottom: 12px;
+	}
+	.temp_day {
+		font-size: 18px;
+	}
+	.temp_night {
+		font-size: 13px;
+		color: $base_col;
+		margin-bottom: 6px;
+	}
+	.info {
+		font-size: 13px;
+		color: $base_col;
+	}
+
+	&:hover {
+		box-shadow: 0px 3px 20px rgba(147, 144, 144, 0.3);
+	}
+}
+
+.tabs {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 7px;
+
+	.tabs_wrap {
+		display: flex;
+	}
+
+	.cancel,
+	.tab {
+		box-shadow: 0px 3px 20px rgba(147, 144, 144, 0.3);
+		border-radius: 5px;
+		padding: 9px 20px;
+		background-color: $lite_back;
+		color: $lite_col;
+		font-size: 18px;
+		margin-right: 15px;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		transition: 0.3s;
+		cursor: pointer;
+	}
+	.cancel {
+		margin-right: 0;
+	}
+
+	.tab {
+		&.active {
+			background: $primary_col;
+			color: white;
+		}
+	}
+}
