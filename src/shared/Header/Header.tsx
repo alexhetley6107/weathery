@@ -1,12 +1,16 @@
 import React from 'react';
-import Select from 'react-select';
+import Select, { components } from 'react-select';
 
 import { GlobalSVGSelector } from '../../assets/icons/global/GlobalSVGSelector';
+import { Theme } from '../../context/ThemeContext';
+import { useTheme } from '../../hooks/useTheme';
 import s from './Header.module.scss';
 
 interface Props {}
 
 const Header = (props: Props) => {
+	const { theme, changeTheme } = useTheme();
+
 	const options = [
 		{ value: 'city-1', label: 'Харьков' },
 		{ value: 'city-2', label: 'Донецк' },
@@ -16,13 +20,21 @@ const Header = (props: Props) => {
 	const colorStyles = {
 		control: (styles: any) => ({
 			...styles,
-			backgroundColor: ' rgba(71, 147, 255, 0.2)',
+			backgroundColor: theme === Theme.DARK ? '#4f4f4f' : 'rgba(71, 147, 255, 0.2)',
 			width: '144px',
 			height: '37px',
 			border: 'none',
 			borderRadius: '10px',
 			zIndex: 100,
 		}),
+		singleValue: (styles: any) => ({
+			...styles,
+			color: theme === Theme.DARK ? '#fff' : '#000',
+		}),
+	};
+
+	const toggleTheme = () => {
+		changeTheme(theme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT);
 	};
 
 	return (
@@ -34,7 +46,7 @@ const Header = (props: Props) => {
 				<div className={s.title}>Weathery</div>
 			</div>
 			<div className={s.wrapper}>
-				<div className={s.change_theme}>
+				<div className={s.change_theme} onClick={toggleTheme}>
 					<GlobalSVGSelector id='change_theme' />
 				</div>
 				<Select styles={colorStyles} options={options} defaultValue={options[0]} />

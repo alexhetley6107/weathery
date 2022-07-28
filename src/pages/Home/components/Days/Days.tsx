@@ -76,7 +76,7 @@ function Days({}: Props) {
 	];
 	return (
 		<>
-			<Tabs />
+			{/* <Tabs /> */}
 			<div className={s.days}>
 				{days.map((day: Day) => (
 					<Card day={day} key={day.day_name} />

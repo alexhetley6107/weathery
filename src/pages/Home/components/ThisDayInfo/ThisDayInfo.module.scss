@@ -6,7 +6,7 @@
 
 	max-width: 750px;
 	width: 100%;
-	background: $lite_back;
+	background: var(#{--components-back-default});
 	box-shadow: $box_shadow;
 	border-radius: $b_radius;
 }
@@ -43,7 +43,7 @@
 	}
 	.value {
 		font-size: 14px;
-		color: $lite_col;
+		color: var(#{--text-color-default});
 	}
 }
 .cloud_img {

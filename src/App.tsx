@@ -8,7 +8,7 @@ import Popup from './shared/Popup/Popup';
 function App() {
 	return (
 		<div className='container'>
-			<Popup />
+			{/* <Popup /> */}
 			<Header />
 			<Routes>
 				<Route path='/' /* exact */ element={<Home />} />

@@ -1,3 +1,5 @@
+@import './../../styles/variables.scss';
+
 .header {
 	width: 100%;
 
@@ -5,7 +7,7 @@
 	align-items: center;
 	justify-content: space-between;
 
-	margin-bottom: 30px;
+	margin: 10px 0;
 }
 
 .wrapper {
@@ -15,6 +17,7 @@
 	.change_theme,
 	.logo {
 		margin-right: 20px;
+		cursor: pointer;
 	}
 
 	.logo {
@@ -28,5 +31,6 @@
 		text-transform: uppercase;
 		font-weight: bold;
 		font-size: 25px;
+		color: $primary_col;
 	}
 }
