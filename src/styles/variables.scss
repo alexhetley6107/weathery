@@ -45,4 +45,9 @@ $card-box-shadow-dark: 0px 3px 20px rgba(5, 5, 5, 0.28);
 	--text-color-dark: #{$lite_col};
 	--text-color-light: #{$dark_col};
 	--text-color-default: var(#{--text-color-light});
+
+	//text
+	--search-color-dark: #{$components-back-dark};
+	--search-color-light: #{$primary_col};
+	--search-color-default: var(#{--search-color-light});
 }
