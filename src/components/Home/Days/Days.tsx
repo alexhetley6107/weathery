@@ -71,13 +71,11 @@ function Days({}: Props) {
 	const { forecast } = useCustomSelector((state) => state.currentWeatherSliceReducer);
 
 	return (
-		<>
-			<div className={s.days}>
-				{forecast.map((day: Day, index: number) => (
-					<Card day={day} key={index} />
-				))}
-			</div>
-		</>
+		<div className={s.days}>
+			{forecast.map((day: Day, index: number) => (
+				<Card day={day} key={index} />
+			))}
+		</div>
 	);
 }
 

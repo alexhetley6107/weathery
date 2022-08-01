@@ -3,12 +3,19 @@
 .this_day_info {
 	position: relative;
 	padding: 40px;
+	margin-bottom: 10px;
 
 	max-width: 750px;
 	width: 100%;
 	background: var(#{--components-back-default});
 	box-shadow: $box_shadow;
 	border-radius: $b_radius;
+	@media (max-width: 900px) {
+		max-width: 100%;
+	}
+	@media (max-width: 550px) {
+		padding: 20px;
+	}
 }
 
 .item {
@@ -27,7 +34,7 @@
 	}
 
 	.indicator {
-		width: 38px;
+		min-width: 38px;
 		height: 38px;
 		display: flex;
 		align-items: center;
@@ -38,17 +45,26 @@
 		border-radius: 50%;
 	}
 	.name {
-		font-size: 14px;
 		color: $base_col;
 	}
 	.value {
-		font-size: 14px;
 		color: var(#{--text-color-default});
+	}
+	.value,
+	.name {
+		font-size: 18px;
+
+		@media (max-width: 550px) {
+			font-size: 14px;
+		}
 	}
 }
 .cloud_img {
 	position: absolute;
 	top: 0;
 	right: 0;
-	// z-index: 0;
+
+	@media (max-width: 550px) {
+		display: none;
+	}
 }

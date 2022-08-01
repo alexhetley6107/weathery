@@ -2,11 +2,16 @@
 
 .this_day {
 	padding: 20px;
+	margin: 0 10px 10px 0;
 	max-width: 400px;
 	width: 100%;
 	background: var(#{--components-back-default});
 	box-shadow: $box_shadow;
 	border-radius: $b_radius;
+
+	@media (max-width: 900px) {
+		max-width: 100%;
+	}
 
 	.top_block {
 		display: flex;
@@ -18,15 +23,25 @@
 		svg {
 			width: 119px;
 			height: 119px;
+			@media (max-width: 430px) {
+				width: 79px;
+				height: 79px;
+			}
 		}
 		.this_temp {
 			font-size: 96px;
 			font-weight: 500;
 			color: $primary_col;
+			@media (max-width: 430px) {
+				font-size: 56px;
+			}
 		}
 		.this_day_name {
 			font-size: 40px;
 			color: var(#{--text-color-default});
+			@media (max-width: 430px) {
+				font-size: 26px;
+			}
 		}
 	}
 
@@ -35,6 +50,9 @@
 		.this_city {
 			color: $base_col;
 			font-size: 25px;
+			@media (max-width: 430px) {
+				font-size: 16px;
+			}
 		}
 	}
 }

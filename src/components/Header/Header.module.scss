@@ -2,44 +2,58 @@
 
 .header {
 	width: 100%;
+	margin: 8px 0;
 
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 
-	margin: 10px 0;
-}
-
-.wrapper {
-	display: flex;
-	align-items: center;
-
-	.change_theme,
-	.logo {
-		margin-right: 20px;
-		cursor: pointer;
+	@media (max-width: 650px) {
+		flex-direction: column;
 	}
+	.wrapper {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 
-	.logo {
-		margin-right: 20px;
-		svg {
-			width: 60px;
-			height: 60px;
+		.logo {
+			display: flex;
+			align-items: center;
+
+			margin-bottom: 3px;
+			svg {
+				width: 60px;
+				height: 60px;
+				@media (max-width: 650px) {
+					width: 40px;
+					height: 40px;
+				}
+			}
+
+			.title {
+				text-transform: uppercase;
+				font-weight: bold;
+				font-size: 25px;
+				color: $primary_col;
+				margin-left: 20px;
+			}
+		}
+		.change_theme {
+			margin-right: 20px;
+			cursor: pointer;
+			@media (max-width: 650px) {
+				margin-right: 0px;
+			}
 		}
 	}
-	.title {
-		text-transform: uppercase;
-		font-weight: bold;
-		font-size: 25px;
-		color: $primary_col;
-	}
-
 	.input_block {
 		display: flex;
+		justify-content: space-between;
 		align-items: center;
 		padding: 8px 12px;
 		background: var(#{--search-color-default});
-		border-radius: 12px;
+		border-radius: $b_radius;
 		input {
 			background: var(#{--search-color-default});
 			color: $lite_col;
@@ -48,9 +62,12 @@
 				color: $lite_col;
 			}
 		}
-
 		svg {
 			cursor: pointer;
+		}
+		@media (max-width: 650px) {
+			width: 100%;
+			margin-top: 5px;
 		}
 	}
 }

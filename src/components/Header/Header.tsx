@@ -43,25 +43,24 @@ const Header = (props: Props) => {
 			<div className={s.wrapper}>
 				<div className={s.logo}>
 					<IndicatorSVGSelector id='header_logo' />
+					<div className={s.title}>Weathery</div>
 				</div>
-				<div className={s.title}>Weathery</div>
-			</div>
-			<div className={s.wrapper}>
+
 				<div className={s.change_theme} onClick={toggleTheme}>
 					<IndicatorSVGSelector id='change_theme' />
 				</div>
-				<div className={s.input_block}>
-					<input
-						value={city}
-						onChange={(e) => setCity(e.target.value)}
-						onKeyPress={onPressEnter}
-						type='text'
-						placeholder='Введите город...'
-					/>
-					<span onClick={getCityWeather}>
-						<IndicatorSVGSelector id='search' />
-					</span>
-				</div>
+			</div>
+			<div className={s.input_block}>
+				<input
+					value={city}
+					onChange={(e) => setCity(e.target.value)}
+					onKeyPress={onPressEnter}
+					type='text'
+					placeholder='Введите город...'
+				/>
+				<span onClick={getCityWeather}>
+					<IndicatorSVGSelector id='search' />
+				</span>
 			</div>
 		</header>
 	);
