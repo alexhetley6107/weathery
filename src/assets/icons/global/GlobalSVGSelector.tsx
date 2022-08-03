@@ -5,17 +5,15 @@ interface Props {
 export const GlobalSVGSelector = ({ id }: Props) => {
 	let num: string | number;
 
-	if (typeof id === 'string') {
-		num = id;
-	} else if (id / 100 === 2) {
+	if (id >= 200 && id < 300) {
 		num = 200;
-	} else if (id / 100 === 3) {
+	} else if (id >= 300 && id < 500) {
 		num = 300;
-	} else if (id / 100 === 5) {
+	} else if (id >= 500 && id < 600) {
 		num = 500;
-	} else if (id / 100 === 6) {
+	} else if (id >= 600 && id < 700) {
 		num = 600;
-	} else if (id / 100 === 7) {
+	} else if (id >= 700 && id < 800) {
 		num = 700;
 	} else {
 		num = id;
